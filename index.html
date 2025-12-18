@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,8 +29,7 @@
       background: rgba(0,0,0,0.5);
     }
 
-    header h1,
-    header p {
+    header h1, header p {
       position: relative;
       z-index: 1;
     }
@@ -50,10 +49,6 @@
       font-weight: bold;
     }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
-
     section {
       padding: 60px 20px;
       max-width: 900px;
@@ -65,10 +60,39 @@
       border-radius: 16px;
       padding: 20px;
       margin-bottom: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
 
-    /* CLASE PARA IMÁGENES DEL BLOG */
+    /* BLOG */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .tab-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      background: rgba(0,0,0,0.4);
+      color: white;
+      font-weight: bold;
+    }
+
+    .tab-btn.active {
+      background: #327399;
+      color: black;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
     .blog-img {
       width: 40%;
       display: block;
@@ -80,98 +104,96 @@
       text-align: center;
       padding: 20px;
       background: rgba(0,0,0,0.4);
-      font-size: 0.9rem;
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Hi, I'm Carlo</h1>
-    <p>13 years old · Programmer • Gamer</p>
-  </header>
+<header>
+  <h1>Hi, I'm Carlo</h1>
+  <p>13 years old · Programmer • Gamer</p>
+</header>
 
-  <nav>
-    <a href="#about">About Me</a>
-    <a href="#projects">Projects</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#blog">Blog</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#blog">Travel Blog</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <section id="about">
-    <div class="card">
-      <h2>About Me</h2>
-      <p>
-        I am a student who loves technology, video games, and programming.
-        I enjoy learning new things and building fun projects.
-      </p>
+<section id="about">
+  <div class="card">
+    <h2>About Me</h2>
+    <p>I love programming, video games and learning new things.</p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="card">
+    <h2>Projects</h2>
+    <ul>
+      <li> Video games</li>
+      <li> Websites</li>
+    </ul>
+  </div>
+</section>
+
+<section id="blog">
+  <div class="card">
+    <h2>Travel Blog ✈️</h2>
+
+    <!-- BOTONES -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showBlog('ny')">New York</button>
+      <button class="tab-btn" onclick="showBlog('panama')">Panama</button>
     </div>
-  </section>
 
-  <section id="projects">
-    <div class="card">
-      <h2>Projects</h2>
-      <ul>
-        <li> Platform-style video game</li>
-        <li> Personal website</li>
-      </ul>
+    <!-- NEW YORK -->
+    <div id="ny" class="tab-content active">
+      <p><b>Day 1:</b> I arrived in New York and loved the city energy.</p>
+      <img src="imagenes/alto.jpg" class="blog-img">
+
+      <p><b>Day 2:</b> Times Square at night was incredible.</p>
+      <img src="imagenes/IMG_20251114_084125714_HDR.jpg" class="blog-img">
+
+      <p><b>Day 3:</b> I visited the American Museum of Natural History.</p>
+      <img src="imagenes/museo.jpg" class="blog-img">
     </div>
-  </section>
 
-  <section id="gallery">
-    <div class="card">
-      <h2>Image Gallery</h2>
-      <p>pictures:</p>
+    <!-- PANAMA -->
+    <div id="panama" class="tab-content">
+      <p><b>Day 1:</b> I arrived in Panama.I spent the day exploring th city.Later that nigth we went out to eat and I ordered a haburger, which was delicious!</p>
+      <img src="imagenes/comida.jpg" class="blog-img">
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;">
-        <img src="imagenes/me.jpg" alt="Me" style="width:100%;border-radius: 60px;">
-        <img src="imagenes/toro.jpg" alt="New York" style="width:100%;border-radius:60px;">
-        <img src="imagenes/yo de cerca.jpg" alt="Me" style="width:100%;border-radius:60px;">
-      </div>
+      <p><b>Day 2:</b> I visit the Panama Canal Museum and I learned about he history of the canal.From my hotel, i can see the ships passing through.The ships were giants</p>
+      <img src="imagenes/barco.jpg" class="blog-img">
     </div>
-  </section>
 
-  <section id="blog">
-    <div class="card">
-      <h2>Travel Blog: New York 🗽</h2>
+  </div>
+</section>
 
-      <p><b>Day 1:</b> I arrived in New York and was amazed by the huge buildings and the energy of the city.</p>
-      <img src="imagenes/alto.jpg" class="blog-img" alt="New York skyline">
+<section id="contact">
+  <div class="card">
+    <h2>Contact</h2>
+    <p>Email: carloaugustocatalini@gmail.com</p>
+    <p>Discord: carlote0</p>
+  </div>
+</section>
 
-      <p><b>Day 2:</b> I walked through Times Square at night, full of lights, giant screens, and people from all over the world.</p>
-      <img src="imagenes/IMG_20251114_084125714_HDR.jpg" class="blog-img" alt="Times Square at night">
+<footer>
+  © 2025 · Hecho por mí lol
+</footer>
 
-      <h3>Day 3 – Museum Day </h3>
-      <p>
-        I visited the American Museum of Natural History, an amazing place with dinosaurs,
-        space exhibits, and lots of incredible science.
-      </p>
+<script>
+  function showBlog(blog) {
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
 
-      <ul>
-        <li> Dinosaur fossils and skeletons</li>
-        <li> Space and planets exhibitions</li>
-        <li> Animals and nature halls</li>
-      </ul>
-
-      <img src="imagenes/museo.jpg" class="blog-img" alt="American Museum of Natural History">
-
-      <p>It was an amazing experience that I will never forget.</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="card">
-      <h2>Contact</h2>
-      <p><b>Email:</b> carloaugustocatalini@gmail.com</p>
-      <p><b>Discord:</b> carlote0</p>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 · Hecho por mí 
-  </footer>
+    document.getElementById(blog).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
 
 </body>
 </html>
